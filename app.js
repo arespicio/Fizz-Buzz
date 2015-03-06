@@ -1,10 +1,9 @@
-$(document).ready(function(){
+var numberCount = 100;
+while (numberCount >= 0 ) {
+  console.log(numberCount);
+  numberCount--;
+  if (numberCount === 100){break};
+}
 
-	$('#go').click(function(){
-		var number = $('#number').val
-		while ( number < 100 ) {
-			print(keyCode);
-			keyCode--;
-		};
-	});
-});
+
+
