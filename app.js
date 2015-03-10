@@ -1,7 +1,12 @@
-function myFunction() {
+$(document).ready(function(){
+    var number = prompt("Enter a number");
+    var num = + number;
+
+
+function myfunction(max) {
 	var text = "";
     var i;
-    for (i=0; i<=100; i++) 
+    for (i=0; i<= max; i++) 
     {
     	if(i%3==0 && i%5==0) {
     		console.log("FizzBuzz");
@@ -22,9 +27,13 @@ function myFunction() {
         	text += i + "<br/>" 
     	}
     }
+
     // document.getElementById("display").innerHTML = text;
     $('#display').append(text);
 }
 
+myfunction(num);
+
+});
 
 
