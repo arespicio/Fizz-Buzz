@@ -1,5 +1,10 @@
 $(document).ready(function(){
     var number = prompt("Enter a number");
+        if (number % 1 !== 0) {
+            alert("Please enter a whole number");
+            window.location.reload();
+            return false;
+        };
     var num = + number;
 
 
