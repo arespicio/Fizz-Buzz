@@ -1,28 +1,36 @@
 
-var text = "";
-var i;
 
 
 $(document).ready(function(){
-    var number = prompt("Enter a number");
-        if (number % 1 !== 0) {
-            alert("Please enter a whole number");
-            window.location.reload();
-            return false;
-        };
+
+    do{
+        var number = prompt("Enter a number");
+    } while (isInputInvalid(number));
+
+    
     var num = + number;
 
     printFizzBuzz(num);
 
-    // document.getElementById("display").innerHTML = text;
-    $('#display').append(text);
-
 });
 
+function isInputInvalid(number) {
+    var isBad = number % 1 !== 0 || number == "";
+
+    // isBad = number == "";
+
+    if (isBad) {
+            alert("Please enter a whole number");
+            return true;
+        }
+
+    return false;
+}
 
 function printFizzBuzz(max) {
+    var text = "";
 
-    for (i=0; i<= max; i++) 
+    for (var i=0; i<= max; i++) 
     {
         if(i%3==0 && i%5==0) {
             console.log("FizzBuzz");
@@ -43,5 +51,8 @@ function printFizzBuzz(max) {
             text += i + "<br/>" 
         }
     }
+
+    // document.getElementById("display").innerHTML = text;
+    $('#display').append(text);
 }
 
